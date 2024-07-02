@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-In this project, I set up and deployed a React application using Ansible. The application is a popular online memory game that aims to level up one's memory.
+In this project, I set up and deployed a React application using Ansible. The application is an online memory game that aims to level up one's memory.
 
 With Ansible, I was able to eliminate repetitive manual steps like setting up server configurations, installing dependencies, and deploying code. This not only saves time but also ensures consistent and error-free deployments across different environments.
 
@@ -12,14 +12,17 @@ Ansible is an open-source IT automation tool that helps automate tasks such as c
 
 ## Game Description
 
-At the start, each card in a three-by-four grid shows the same icon. Players flip cards to find matching pairs. If cards don't match, they flip back, and the Turns counter increments by 1. To win, find all pairs within 15 turns. The "New Game" button reshuffles the cards and resets the Turns counter to 0.
+At the start, each card in a three-by-four grid shows the same icon. Players flip cards to find matching pairs. If cards don't match, they flip back, and the 'Turns' counter increments by 1. To win, find all pairs within 15 turns. The "New Game" button reshuffles the cards and resets the 'Turns' counter to 0.
 
 
 <p align="center">
-  <img src="GamePicture.png" alt="Front End" style="width:400px;">
+  <img src="GamePicture.png" alt="Front End" style="width:500px;">
 </p>
+<div align="center">
+  *Screenshot displaying the front-end interface of the application.*
+</div>
 
-*Screenshot displaying the front-end interface of the application.*
+
 
 ## Prerequisites
 
@@ -55,6 +58,14 @@ Create a file named `playbook.yml` in the `ansible` directory. This playbook wil
 3. Install Required System Packages
 4. Install NodeJS
 5. Build and Run the Application
+
+## Usage
+
+- Navigate to the `ansible` directory and run the Ansible playbook using the terminal:
+
+  ```bash
+  ansible-playbook playbook.yml -i hosts
+
 
 ## Playbook Example
 
@@ -96,4 +107,5 @@ Create a file named `playbook.yml` in the `ansible` directory. This playbook wil
       shell: cd /usercode/memory_game/ && npm install
     - name: run app
       shell: cd /usercode/memory_game/ && npm start
+
 
