@@ -1,0 +1,36 @@
+--- 
+ - hosts: all
+   connection: local
+   tasks:
+    - name: Install aptitude
+      apt:
+        name: aptitude
+        state: latest
+        update_cache: true
+    - name: Install curl
+      apt:
+        name: curl
+        state: present
+    - name: Install wget
+      apt:
+        name: wget
+        state: present
+    - name: Install required system packages
+      apt:
+        pkg:
+          - apt-transport-https
+          - ca-certificates
+          - software-properties-common
+          - python3-pip
+          - virtualenv
+          - python3-setuptools
+        state: latest
+        update_cache: true
+    - name: "Add nodejs 16.x ppa for apt repo"
+      shell: curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+    - name: "install node"
+      shell: apt-get install -y nodejs
+    - name: build app
+      shell: cd /usercode/memory_game/ && npm install 
+    - name: run app
+      shell: cd /usercode/memory_game/ && npm start
