@@ -6,41 +6,57 @@ In this project, I set up and deployed a React application using Ansible. The ap
 
 With Ansible, I was able to eliminate repetitive manual steps like setting up server configurations, installing dependencies, and deploying code. This not only saves time but also ensures consistent and error-free deployments across different environments.
 
-Ansible is an open-source IT automation tool that helps automate tasks such as configuration management, application deployment, and orchestration. It is widely used for managing complex IT environments and ensuring consistency across systems.
+## Introduction
 
+Ansible is an open-source IT automation tool that helps automate tasks such as configuration management, application deployment, and orchestration. It is widely used for managing complex IT environments and ensuring consistency across systems.
 
 ## Game Description
 
 At the start, each card in a three-by-four grid shows the same icon. Players flip cards to find matching pairs. If cards don't match, they flip back, and the Turns counter increments by 1. To win, find all pairs within 15 turns. The "New Game" button reshuffles the cards and resets the Turns counter to 0.
 
 
-
 <p align="center">
-  <img src="GamePicture.png" alt="Front End" style="width:500px;">
+  <img src="GamePicture.png" alt="Front End" style="width:400px;">
 </p>
 
+*Screenshot displaying the front-end interface of the application.*
 
+## Prerequisites
 
+- Ansible installed on your local machine.
+- NodeJS and npm installed on your local machine.
 
-## Project Tasks
+## Installation
 
-### 1. Setting Up Ansible Inventory
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/React_Memory_Game_Deployment_Ansible_Automation.git
+    cd React_Memory_Game_Deployment_Ansible_Automation
+    ```
 
-Ansible relies on an inventory to match a pattern specified in the playbooks. The `/etc/ansible/hosts` file is the default location for the inventory. Open the `/usercode/ansible/hosts` file and add a webserver with the address `0.0.0.0`.
+2. Navigate to the Ansible directory:
+    ```bash
+    cd ansible
+    ```
 
-### 2. Creating the Ansible Playbook
+3. Add the webserver to the inventory:
+    ```bash
+    echo "webserver ansible_host=0.0.0.0" >> hosts
+    ```
 
-Create a file named `playbook.yml` in the `/usercode/ansible` directory. This playbook will include multiple tasks to automate the deployment process.
+## Creating the Ansible Playbook
 
-### 3. Playbook Tasks
+Create a file named `playbook.yml` in the `ansible` directory. This playbook will include multiple tasks to automate the deployment process.
 
-- **Install Aptitude**
-- **Install curl and wget**
-- **Install Required System Packages**
-- **Install NodeJS**
-- **Build and Run the Application**
+## Playbook Tasks
 
-### Playbook Example
+1. Install Aptitude
+2. Install curl and wget
+3. Install Required System Packages
+4. Install NodeJS
+5. Build and Run the Application
+
+## Playbook Example
 
 ```yaml
 ---
@@ -80,3 +96,4 @@ Create a file named `playbook.yml` in the `/usercode/ansible` directory. This pl
       shell: cd /usercode/memory_game/ && npm install
     - name: run app
       shell: cd /usercode/memory_game/ && npm start
+
