@@ -11,9 +11,9 @@ Ansible is an open-source IT automation tool that helps automate tasks such as c
 
 ## Game Description
 
-At the start of the game, we’ll have the Educative icon depicted on each card of a three-by-four grid and a Turns counter to keep track of the number of turns. Players must click the cards to flip them and find all the matching pairs. If the clicked cards are not the same, they will be flipped back immediately. After each successful or unsuccessful attempt, the Turns counter will be incremented by 1. To win the game, all matching pairs must be found within 15 Turns. To do well in the game, you’ll have to memorize the cards before they are flipped back.
+At the start, each card in a three-by-four grid shows the same icon. Players flip cards to find matching pairs. If cards don't match, they flip back, and the Turns counter increments by 1. To win, find all pairs within 15 turns. The "New Game" button reshuffles the cards and resets the Turns counter to 0.
 
-Once the game is complete, you can also reset the game using the “New Game” button, which will reshuffle all the cards and set the Turns counter back to 0.
+
 
 ## Project Tasks
 
