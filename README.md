@@ -15,6 +15,13 @@ At the start, each card in a three-by-four grid shows the same icon. Players fli
 
 
 
+<p align="center">
+  <img src="GamePicture.png" alt="Front End" style="width:500px;">
+</p>
+
+
+
+
 ## Project Tasks
 
 ### 1. Setting Up Ansible Inventory
