@@ -4,7 +4,7 @@
 
 In this project, I set up and deployed a React application using Ansible. The application is a popular online memory game that aims to level up one's memory.
 
-With Ansible, I was able to eliminate repetitive manual steps like setting up server configurations, installing dependencies, and deploying code. This not only saves a significant amount of time but also ensures consistent and error-free deployments across different environments.
+With Ansible, I was able to eliminate repetitive manual steps like setting up server configurations, installing dependencies, and deploying code. This not only saves time but also ensures consistent and error-free deployments across different environments.
 
 Ansible is an open-source IT automation tool that helps automate tasks such as configuration management, application deployment, and orchestration. It is widely used for managing complex IT environments and ensuring consistency across systems.
 
