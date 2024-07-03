@@ -20,9 +20,10 @@ At the start, each card in a three-by-four grid shows the same icon. Players fli
   <img src="GamePicture.png" alt="Front End" style="width:500px;">
 </p>
 <div align="center">
-*Screenshot displaying the front-end interface of the application.*
-</div>
 
+_Screenshot displaying the front-end interface of the application._
+
+</div>
 
 ---
 
