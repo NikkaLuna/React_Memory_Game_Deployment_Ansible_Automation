@@ -64,7 +64,18 @@ Create a file named `playbook.yml` in the `ansible` directory. This playbook wil
   ```bash
   ansible-playbook playbook.yml -i hosts
 
+## Access
 
+After running the playbook, users can access the deployed game by visiting the server's IP address or domain name in a browser. For example, if the server's IP address is `0.0.0.0`, the game can be accessed by navigating to `http://0.0.0.0:3000` in a web browser.
+
+## Ansible Inventory
+
+The `hosts` file, also known as the Ansible inventory, specifies the target servers for deployment. Configure it with the IP address or hostname of the server where the game will be deployed. Here is an example of how to add a web server to the inventory:
+
+```bash
+echo "webserver ansible_host=0.0.0.0" >> hosts
+
+```
 ## Playbook Example
 
 ```yaml
@@ -106,16 +117,7 @@ Create a file named `playbook.yml` in the `ansible` directory. This playbook wil
     - name: run app
       shell: cd /usercode/memory_game/ && npm start
 
-## Access
 
-After running the playbook, users can access the deployed game by visiting the server's IP address or domain name in a browser. For example, if the server's IP address is `0.0.0.0`, the game can be accessed by navigating to `http://0.0.0.0:3000` in a web browser.
-
-## Ansible Inventory
-
-The `hosts` file, also known as the Ansible inventory, specifies the target servers for deployment. Configure it with the IP address or hostname of the server where the game will be deployed. Here is an example of how to add a web server to the inventory:
-
-```bash
-echo "webserver ansible_host=0.0.0.0" >> hosts
 
 
 
