@@ -14,12 +14,17 @@ Ansible is an open-source IT automation tool that helps automate tasks such as c
 
 At the start, each card in a three-by-four grid shows the same icon. Players flip cards to find matching pairs. If cards don't match, they flip back, and the 'Turns' counter increments by 1. To win, find all pairs within 15 turns. The "New Game" button reshuffles the cards and resets the 'Turns' counter to 0.
 
+<br>
+
 <p align="center">
   <img src="GamePicture.png" alt="Front End" style="width:500px;">
 </p>
 <div align="center">
-  *Screenshot displaying the front-end interface of the application.*
+*Screenshot displaying the front-end interface of the application.*
 </div>
+
+
+---
 
 ## Prerequisites
 
@@ -67,7 +72,6 @@ Create a file named `playbook.yml` in the `ansible` directory. This playbook wil
 ## Access
 
 After running the playbook, users can access the deployed game by visiting the server's IP address or domain name in a browser. 
-
 For example, if the server's IP address is `0.0.0.0`, the game can be accessed by navigating to `http://0.0.0.0:3000` in a web browser.
 
 ## Ansible Inventory
