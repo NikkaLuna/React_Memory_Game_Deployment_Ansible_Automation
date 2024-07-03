@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-In this project, I set up and deployed a React application using Ansible. The application is an online memory game that aims to level up one's memory.
+In this project, I set up and deployed a React application using Ansible. The application is an online memory game that aims to improve one's memory.
 
 With Ansible, I was able to eliminate repetitive manual steps like setting up server configurations, installing dependencies, and deploying code. This not only saves time but also ensures consistent and error-free deployments across different environments.
 
@@ -14,7 +14,6 @@ Ansible is an open-source IT automation tool that helps automate tasks such as c
 
 At the start, each card in a three-by-four grid shows the same icon. Players flip cards to find matching pairs. If cards don't match, they flip back, and the 'Turns' counter increments by 1. To win, find all pairs within 15 turns. The "New Game" button reshuffles the cards and resets the 'Turns' counter to 0.
 
-
 <p align="center">
   <img src="GamePicture.png" alt="Front End" style="width:500px;">
 </p>
@@ -22,12 +21,11 @@ At the start, each card in a three-by-four grid shows the same icon. Players fli
   *Screenshot displaying the front-end interface of the application.*
 </div>
 
-
-
 ## Prerequisites
 
 - Ansible installed on your local machine.
-- NodeJS and npm installed on your local machine.
+- Node.js, npm, and React installed on your local machine.
+- A web server (e.g., Nginx, Apache) to serve the React application.
 
 ## Installation
 
@@ -42,7 +40,7 @@ At the start, each card in a three-by-four grid shows the same icon. Players fli
     cd ansible
     ```
 
-3. Add the webserver to the inventory:
+3. Add the web server to the inventory:
     ```bash
     echo "webserver ansible_host=0.0.0.0" >> hosts
     ```
@@ -107,5 +105,17 @@ Create a file named `playbook.yml` in the `ansible` directory. This playbook wil
       shell: cd /usercode/memory_game/ && npm install
     - name: run app
       shell: cd /usercode/memory_game/ && npm start
+
+## Access
+
+After running the playbook, users can access the deployed game by visiting the server's IP address or domain name in a browser. For example, if the server's IP address is `0.0.0.0`, the game can be accessed by navigating to `http://0.0.0.0:3000` in a web browser.
+
+## Ansible Inventory
+
+The `hosts` file, also known as the Ansible inventory, specifies the target servers for deployment. Configure it with the IP address or hostname of the server where the game will be deployed. Here is an example of how to add a web server to the inventory:
+
+```bash
+echo "webserver ansible_host=0.0.0.0" >> hosts
+
 
 
